@@ -5,4 +5,4 @@ spring:
     user:
       name: akshay
       password: akshay
-      roles: ADMIN
+      roles: ADMIN #spring security will automatically add ROLE_ prefix to the role name, so it will be ROLE_ADMIN
