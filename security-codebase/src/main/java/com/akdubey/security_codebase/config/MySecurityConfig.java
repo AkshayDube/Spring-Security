@@ -14,6 +14,7 @@ public class MySecurityConfig {
                 httpBasic(Customizer.withDefaults())
                 .authorizeHttpRequests(
                         auth -> auth.requestMatchers("/public/**").permitAll()
+                                .requestMatchers("/admin/write/**").hasAuthority("write")
                                 .requestMatchers("/admin/**").hasRole("admin")
                                 .anyRequest().authenticated());
         return httpSecurity.build();

@@ -1,9 +1,10 @@
 spring:
   application:
     name: security-codebase
-  security:
-    user:
-      name: akshay
-      password: akshay
-      roles: admin #spring security will automatically add ROLE_ prefix to the role name, so it will be ROLE_ADMIN
-      # role convert to ROLE_ but authorities do not.
+    #coomention below code since now defined configuration in Java Code
+#  security:
+#    user:
+#      name: akshay
+#      password: akshay
+#      roles: admin #spring security will automatically add ROLE_ prefix to the role name, so it will be ROLE_ADMIN
+#      # role convert to ROLE_ but authorities do not.
