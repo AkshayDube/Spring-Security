@@ -5,6 +5,5 @@ spring:
     user:
       name: akshay
       password: akshay
-      roles: ADMIN #spring security will automatically add ROLE_ prefix to the role name, so it will be ROLE_ADMIN
-      authorities: read, write #spring security will automatically add ROLE_ prefix to the authority name, so it will be ROLE_read and ROLE_write
+      roles: admin #spring security will automatically add ROLE_ prefix to the role name, so it will be ROLE_ADMIN
       # role convert to ROLE_ but authorities do not.
