@@ -8,3 +8,21 @@ spring:
 #      password: akshay
 #      roles: admin #spring security will automatically add ROLE_ prefix to the role name, so it will be ROLE_ADMIN
 #      # role convert to ROLE_ but authorities do not.
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  h2:
+    console:
+      enabled: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+logging:
+  level:
+    org.springframework.security: DEBUG

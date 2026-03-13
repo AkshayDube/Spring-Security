@@ -11,28 +11,28 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 @Configuration
 public class CustomUser {
 
-    @Bean
-    BCryptPasswordEncoder bCryptPasswordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+//    @Bean
+//    BCryptPasswordEncoder bCryptPasswordEncoder() {
+//        return new BCryptPasswordEncoder();
+//    }
 
-    @Bean
-    public UserDetailsService userDetailsService() {
-        UserDetails admin1 = User
-                .builder()
-                .username("akshay")
-                .password(bCryptPasswordEncoder().encode("akshay"))
-                .roles("admin")
-                .authorities("read","write")
-                .build();
-
-        UserDetails admin2 = User
-                .builder()
-                .username("preetam")
-                .password(bCryptPasswordEncoder().encode("preetam"))
-                .roles("admin")
-                .authorities("read")
-                .build();
-        return new InMemoryUserDetailsManager(admin1, admin2);
-    }
+//    @Bean
+//    public UserDetailsService userDetailsService() {
+//        UserDetails admin1 = User
+//                .builder()
+//                .username("akshay")
+//                .password(bCryptPasswordEncoder().encode("akshay"))
+//                .roles("admin")
+//                .authorities("read","write")
+//                .build();
+//
+//        UserDetails admin2 = User
+//                .builder()
+//                .username("preetam")
+//                .password(bCryptPasswordEncoder().encode("preetam"))
+//                .roles("admin")
+//                .authorities("read")
+//                .build();
+//        return new InMemoryUserDetailsManager(admin1, admin2);
+//    }
 }

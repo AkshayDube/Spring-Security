@@ -12,11 +12,15 @@ public class MySecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         HttpSecurity httpSecurity = http.
                 httpBasic(Customizer.withDefaults())
+                .csrf(csrf -> csrf
+                        .ignoringRequestMatchers("/h2-console/**")
+                )
+                .headers(headers -> headers.frameOptions(frame -> frame.disable()))
                 .authorizeHttpRequests(
                         auth -> auth.requestMatchers("/public/**").permitAll()
                                 .requestMatchers("/admin/write/**").hasAuthority("write")
                                 .requestMatchers("/admin/**").hasRole("admin")
-                                .anyRequest().authenticated());
+                                .anyRequest().permitAll());
         return httpSecurity.build();
     }
 }
